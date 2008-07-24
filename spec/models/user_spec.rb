@@ -13,8 +13,8 @@ def create_user(options = {})
 end
 
 describe User, "validations" do
-  it "should validate presence of login" do
-    User.should have_validated_presence_of(:login)
+  it do
+    User.should validate_presence_of(:login)
   end
   it "should validate presence of email" do
     User.should have_validated_presence_of(:email)

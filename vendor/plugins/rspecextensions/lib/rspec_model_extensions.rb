@@ -34,7 +34,7 @@ module ActiveRecordMatchers
     end
     
     def description
-      "have validate_presence_of #{@field}"
+      "validate_presence_of #{@field}"
     end
     
     def failure_message
@@ -48,6 +48,8 @@ module ActiveRecordMatchers
   def have_validated_presence_of(field, options={})
     HaveValidatedPresenceOf.new(field, options)
   end
+  
+  alias_method :validate_presence_of, :have_validated_presence_of
 
   class HaveValidatedAsAttachment
     def matches?(model)
